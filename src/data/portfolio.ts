@@ -27,13 +27,13 @@ export const PERSONAL_INFO = {
     'SOC Analyst Internships',
     'Entry-Level Security Opportunities'
   ],
-  tagline: 'Detect Threats. Defend Systems. Secure the Future.',
+  tagline: 'From learning cybersecurity to building for defense — focused on SOC operations, threat detection, and Blue Team security.',
   heroEyebrow: 'ASPIRING SOC ANALYST • BLUE TEAM LEARNER',
   heroHeading: "Hi, I'm Satya.",
   heroTitle: 'Cybersecurity Student · Aspiring SOC Analyst',
   heroDescriptions: [
-    'Passionate and motivated Computer Science student with a growing interest in Cybersecurity, Security Operations, and Blue Team practices.',
-    'Hands-on experience with network analysis, security tools, cybersecurity projects, simulations, and practical learning across threat detection, security monitoring, and network security.'
+    'From learning cybersecurity to building for defense — focused on SOC operations, threat detection, and Blue Team security.',
+    'A serious cybersecurity candidate with a polished technical identity — combining hands-on experience in network packet analysis, security tools, SIEM detections, and defensive security projects.'
   ],
   availability: 'Open to Cybersecurity Internships & Entry-Level Security Opportunities',
   resumePath: '/resume.pdf'
@@ -78,8 +78,8 @@ export const ABOUT_DATA = {
   sectionLabel: 'ABOUT ME',
   heading: 'Who I Am',
   paragraphs: [
-    'I am a Cybersecurity student with hands-on training in network security, SOC operations, and threat analysis. I have experience working with security tools, network protocols, security simulations, and practical cybersecurity projects.',
-    'I am particularly interested in defensive security, threat detection, security monitoring, incident response, and Blue Team operations.',
+    'From learning cybersecurity to building for defense — focused on SOC operations, threat detection, and Blue Team security.',
+    'A serious cybersecurity candidate with a polished technical identity — possessing hands-on experience with security tools, network protocols, security simulations, and practical cybersecurity projects.',
     'I am currently preparing for cybersecurity internships and entry-level security opportunities where I can strengthen my practical skills and contribute to secure digital environments.'
   ],
   cards: [
@@ -438,7 +438,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
 
 export const CAREER_OBJECTIVE = {
   heading: 'Career Objective',
-  text: 'To begin my career in cybersecurity as a SOC Analyst or Security Analyst, applying my knowledge of network security, threat detection, security monitoring, and incident response while continuously developing my Blue Team capabilities.'
+  text: 'From learning cybersecurity to building for defense — focused on SOC operations, threat detection, and Blue Team security. Aiming to begin my career as a SOC Analyst or Security Analyst, applying my knowledge of network security, security monitoring, and incident response.'
 };
 
 export const CREDENTIALS_DATA: CredentialItem[] = [
@@ -569,8 +569,8 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
 ];
 
 export const RECRUITER_CTA_DATA = {
-  heading: 'Looking for the next opportunity',
-  text: "I'm currently seeking cybersecurity internships and entry-level security opportunities where I can strengthen my practical skills and contribute to defensive security.",
-  focusTags: ['SOC', 'Security Operations', 'Blue Team', 'Network Security'],
+  heading: 'A serious cybersecurity candidate with a polished technical identity.',
+  text: "From learning cybersecurity to building for defense — focused on SOC operations, threat detection, and Blue Team security. Currently seeking cybersecurity internships and entry-level security opportunities.",
+  focusTags: ['SOC Operations', 'Threat Detection', 'Blue Team', 'Network Security'],
   linkedinUrl: 'https://www.linkedin.com/in/satya-kumari-koppineedi/'
 };
