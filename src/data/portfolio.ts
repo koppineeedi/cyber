@@ -475,13 +475,13 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
     buttonLabel: 'View Profile'
   },
 
-  // 10 Credly Badges
+  // Credly Badges with exact user-provided titles
   {
     id: 'credly-1',
-    organization: 'Credly',
+    organization: 'Cisco / Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
+    title: 'Junior Cybersecurity Analyst Career Path',
     verificationUrl: 'https://www.credly.com/badges/6971f44f-8149-44a6-9f9c-f118e58bebaf',
     buttonLabel: 'View Badge'
   },
@@ -490,7 +490,7 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
     organization: 'Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
+    title: 'Python Essentials 2',
     verificationUrl: 'https://www.credly.com/badges/38f2c821-faf0-476c-956e-474473b514bd',
     buttonLabel: 'View Badge'
   },
@@ -499,53 +499,53 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
     organization: 'Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
+    title: 'Apply AI: Analyze Customer Reviews',
     verificationUrl: 'https://www.credly.com/badges/1a44bc79-5ed4-48e5-87c6-d38a7b9b1b6f',
     buttonLabel: 'View Badge'
   },
   {
     id: 'credly-4',
-    organization: 'Credly',
+    organization: 'Cisco / Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
+    title: 'CCNA: Introduction to Networks',
     verificationUrl: 'https://www.credly.com/badges/b3cb8753-384b-4d4d-9ba4-e76e2134403b',
     buttonLabel: 'View Badge'
   },
   {
     id: 'credly-5',
-    organization: 'Credly',
+    organization: 'Cisco / Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
+    title: 'CCNA: Enterprise Networking, Security, and Automation',
     verificationUrl: 'https://www.credly.com/badges/c1b76357-0539-4a86-ad11-4cf592e7c0e2',
     buttonLabel: 'View Badge'
   },
   {
     id: 'credly-6',
-    organization: 'Credly',
+    organization: 'Cisco / Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
-    verificationUrl: 'https://www.credly.com/badges/bba15247-2538-483d-87f2-4e6aab137c5d',
+    title: 'Introduction to Cybersecurity',
+    verificationUrl: 'https://www.credly.com/badges/dcd71c92-1761-4ca8-80f0-3bb3c7486724',
     buttonLabel: 'View Badge'
   },
   {
     id: 'credly-7',
-    organization: 'Credly',
+    organization: 'Cisco / Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
-    verificationUrl: 'https://www.credly.com/badges/7f4dbb2b-5c13-4747-9d19-232d99e699de',
+    title: 'Networking Basics',
+    verificationUrl: 'https://www.credly.com/badges/aaf60433-dd7b-4a34-84d8-2bdb6c7cb4cf',
     buttonLabel: 'View Badge'
   },
   {
     id: 'credly-8',
-    organization: 'Credly',
+    organization: 'Cisco / Credly',
     type: 'Verified Badge',
     category: 'BADGE',
-    title: 'Credly Verified Badge',
-    verificationUrl: 'https://www.credly.com/badges/aaf60433-dd7b-4a34-84d8-2bdb6c7cb4cf',
+    title: 'Introduction to IoT',
+    verificationUrl: 'https://www.credly.com/badges/bba15247-2538-483d-87f2-4e6aab137c5d',
     buttonLabel: 'View Badge'
   },
   {
@@ -554,7 +554,7 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
     type: 'Verified Badge',
     category: 'BADGE',
     title: 'Credly Verified Badge',
-    verificationUrl: 'https://www.credly.com/badges/dcd71c92-1761-4ca8-80f0-3bb3c7486724',
+    verificationUrl: 'https://www.credly.com/badges/7f4dbb2b-5c13-4747-9d19-232d99e699de',
     buttonLabel: 'View Badge'
   },
   {
