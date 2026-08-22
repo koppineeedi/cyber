@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, ChevronRight } from 'lucide-react';
+import { Menu, X, Shield, ChevronRight, Search, FileText } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
@@ -13,7 +13,12 @@ const NAV_ITEMS = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenResumeModal?: () => void;
+  onOpenCommandPalette?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenCommandPalette }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -26,7 +31,6 @@ export const Navbar: React.FC = () => {
         setIsScrolled(false);
       }
 
-      // ScrollSpy section detector
       const sections = NAV_ITEMS.map((item) => item.href.substring(1));
       const scrollPosition = window.scrollY + 200;
 
@@ -59,7 +63,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#060913]/90 backdrop-blur-xl border-b border-white/[0.08] py-3 shadow-xl shadow-black/50'
           : 'bg-transparent py-5'
@@ -107,20 +111,40 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Status Badge */}
-          <div className="hidden sm:flex items-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-medium shadow-sm shadow-emerald-500/10">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span>● Open to Opportunities</span>
-            </div>
+          {/* Right Header Action Buttons */}
+          <div className="hidden sm:flex items-center gap-2">
+            {/* Quick Search Ctrl+K Button */}
+            <button
+              type="button"
+              onClick={onOpenCommandPalette}
+              aria-label="Quick Search"
+              className="p-2 rounded-xl bg-white/[0.04] hover:bg-cyan-500/15 border border-white/[0.08] hover:border-cyan-500/30 text-slate-300 hover:text-cyan-300 text-xs font-mono transition-all flex items-center gap-1.5"
+            >
+              <Search className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden md:inline font-mono">Ctrl+K</span>
+            </button>
+
+            {/* Resume Preview Trigger */}
+            <button
+              type="button"
+              onClick={onOpenResumeModal}
+              className="px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-semibold flex items-center gap-1.5 transition-all"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Resume</span>
+            </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex lg:hidden items-center gap-3">
-            <div className="sm:hidden inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Open</span>
-            </div>
+          <div className="flex lg:hidden items-center gap-2">
+            <button
+              type="button"
+              onClick={onOpenCommandPalette}
+              className="p-2 rounded-lg bg-white/[0.05] border border-white/[0.1] text-slate-300 hover:text-white"
+              aria-label="Open search palette"
+            >
+              <Search className="w-5 h-5 text-cyan-400" />
+            </button>
 
             <button
               type="button"
@@ -158,11 +182,18 @@ export const Navbar: React.FC = () => {
               );
             })}
 
-            <div className="pt-4 mt-2 border-t border-white/[0.08] flex items-center justify-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-medium">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Open to Opportunities</span>
-              </div>
+            <div className="pt-3 mt-2 border-t border-white/[0.08] flex items-center justify-between gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onOpenResumeModal) onOpenResumeModal();
+                }}
+                className="flex-1 py-2 px-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-1.5"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>Resume Preview</span>
+              </button>
             </div>
           </div>
         </div>

@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   MapPin,
   Briefcase,
   ArrowRight,
-  Send,
   Mail,
   Terminal,
-  FileText
+  FileText,
+  Copy,
+  Check,
+  Search
 } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../data/portfolio';
 import { HeroVisual } from './HeroVisual';
 import { HeroSnapshot } from './HeroSnapshot';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 
-export const Hero: React.FC = () => {
-  const [hasResume, setHasResume] = useState(false);
+interface HeroProps {
+  onOpenResumeModal?: () => void;
+  onOpenCommandPalette?: () => void;
+}
 
-  useEffect(() => {
-    // Check if resume.pdf exists in public/
-    fetch(PERSONAL_INFO.resumePath, { method: 'HEAD' })
-      .then((res) => {
-        if (res.ok) {
-          setHasResume(true);
-        } else {
-          setHasResume(false);
-        }
-      })
-      .catch(() => setHasResume(false));
-  }, []);
+export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal, onOpenCommandPalette }) => {
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(PERSONAL_INFO.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
   const getSocialIcon = (iconName: string) => {
     switch (iconName) {
@@ -67,9 +67,21 @@ export const Hero: React.FC = () => {
             className="lg:col-span-7 space-y-6 text-left"
           >
             {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase">
-              <Terminal className="w-3.5 h-3.5" />
-              {PERSONAL_INFO.heroEyebrow}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-semibold tracking-widest uppercase">
+                <Terminal className="w-3.5 h-3.5" />
+                {PERSONAL_INFO.heroEyebrow}
+              </div>
+
+              {/* Quick Search Shortcut Trigger */}
+              <button
+                type="button"
+                onClick={onOpenCommandPalette}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-cyan-500/15 border border-white/[0.08] hover:border-cyan-500/30 text-slate-400 hover:text-cyan-300 text-xs font-mono transition-all"
+              >
+                <Search className="w-3.5 h-3.5" />
+                <span>Search (Ctrl+K)</span>
+              </button>
             </div>
 
             {/* Main Title */}
@@ -101,7 +113,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-3 pt-4">
               <button
                 type="button"
                 onClick={() => handleScroll('#projects')}
@@ -111,26 +123,25 @@ export const Hero: React.FC = () => {
                 <ArrowRight className="w-4 h-4" />
               </button>
 
+              {/* Interactive Resume Preview Button */}
               <button
                 type="button"
-                onClick={() => handleScroll('#contact')}
-                className="px-6 py-3.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 font-semibold text-sm flex items-center gap-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer"
+                onClick={onOpenResumeModal}
+                className="px-5 py-3.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-slate-200 font-semibold text-sm flex items-center gap-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer"
               >
-                <Send className="w-4 h-4" />
-                <span>Let's Connect</span>
+                <FileText className="w-4 h-4 text-cyan-400" />
+                <span>Resume Preview</span>
               </button>
 
-              {/* Conditional Download Resume Button */}
-              {hasResume && (
-                <a
-                  href={PERSONAL_INFO.resumePath}
-                  download="Satya_Koppineedi_Resume.pdf"
-                  className="px-6 py-3.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-slate-200 font-semibold text-sm flex items-center gap-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-                >
-                  <FileText className="w-4 h-4 text-cyan-400" />
-                  <span>Download Resume</span>
-                </a>
-              )}
+              {/* One-Click Copy Email Button */}
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="px-4 py-3.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold flex items-center gap-1.5 transition-all"
+              >
+                {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                <span>{copiedEmail ? 'Copied Email!' : 'Copy Email'}</span>
+              </button>
             </div>
 
             {/* Social Icons Bar */}
