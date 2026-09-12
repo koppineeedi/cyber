@@ -243,6 +243,24 @@ export interface UpgradedProjectItem extends ProjectItem {
 
 export const PROJECTS_DATA: UpgradedProjectItem[] = [
   {
+    id: 'netwatch',
+    title: 'NetWatch',
+    category: 'Enterprise SIEM & SOAR',
+    categoryFilter: 'Cybersecurity',
+    maturity: 'Enterprise SIEM / SOAR Platform',
+    isFeatured: true,
+    description: 'Defensive SIEM, UEBA, Sigma Detection Engine, and SOAR Analyst Platform built with FastAPI (Python), SQLAlchemy, React (TypeScript), Vite, and Tailwind CSS.',
+    githubUrl: 'https://github.com/koppineeedi/NetWatch-Network-Security-Monitoring-Suspicious-Activity-Detection-Platform',
+    tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'SIEM', 'UEBA', 'Sigma Engine', 'SOAR', 'MITRE ATT&CK'],
+    securityRelevance: 'Passive socket telemetry • Syslog receiver (UDP 514) • Threat intelligence (AbuseIPDB/OTX/MISP) • Sigma engine & sandbox • SOAR playbooks',
+    keyFeatures: [
+      'Passive system socket connection telemetry & structured log ingestion engine',
+      'Explainable Z-score anomaly detection & MITRE ATT&CK tactic/technique mapping',
+      'Sigma rule parser, validator, field mapper & sandbox execution environment',
+      'Automated SOAR playbook engine with OS host isolation and firewall drivers'
+    ]
+  },
+  {
     id: 'exploit2detect',
     title: 'Exploit2Detect',
     category: 'Cybersecurity / SOC',
@@ -473,6 +491,53 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
     title: 'Infosys Springboard Learning Profile',
     verificationUrl: 'https://infyspringboard.onwingspan.com/web/en/app/profile/dashboard',
     buttonLabel: 'View Profile'
+  },
+
+  // Newly Added Cybersecurity Credentials
+  {
+    id: 'udemy-bug-bounty',
+    organization: 'Udemy',
+    type: 'Verified Credential',
+    category: 'CERTIFICATION',
+    title: 'Masterclass for Bug Bounty',
+    verificationUrl: 'https://www.udemy.com/certificate/UC-98501d75-dbf9-46c1-8360-eeed579f2028/',
+    buttonLabel: 'View Certificate'
+  },
+  {
+    id: 'udemy-zero-trust-linux',
+    organization: 'Udemy',
+    type: 'Verified Credential',
+    category: 'CERTIFICATION',
+    title: 'Zero-Trust Linux Administration: Complete Root Sudo Security',
+    verificationUrl: 'https://www.udemy.com/certificate/UC-1aca5ba9-97fe-46be-b7e6-8a4107729cdf',
+    buttonLabel: 'View Certificate'
+  },
+  {
+    id: 'udemy-network-fundamentals',
+    organization: 'Udemy',
+    type: 'Verified Credential',
+    category: 'CERTIFICATION',
+    title: 'Network Fundamentals',
+    verificationUrl: 'https://www.udemy.com/certificate/UC-68c78814-f91b-4058-a970-e6b2a111aa25',
+    buttonLabel: 'View Certificate'
+  },
+  {
+    id: 'deloitte-cyber-simulation',
+    organization: 'Deloitte (Forage)',
+    type: 'Verified Credential',
+    category: 'CERTIFICATION',
+    title: 'Deloitte Australia - Cyber Job Simulation',
+    verificationUrl: 'https://www.theforage.com/certificates/TuEkdQM2m5X9XyXxA',
+    buttonLabel: 'Verify Certificate'
+  },
+  {
+    id: 'tata-cyber-simulation',
+    organization: 'Tata (Forage)',
+    type: 'Verified Credential',
+    category: 'CERTIFICATION',
+    title: 'Tata - Cybersecurity Analyst Job Simulation',
+    verificationUrl: 'https://www.theforage.com/certificates/ahqADnNBEJwWXdGRY',
+    buttonLabel: 'Verify Certificate'
   },
 
   // Credly Badges with exact user-provided titles
