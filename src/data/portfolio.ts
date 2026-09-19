@@ -696,6 +696,15 @@ export const CREDENTIALS_DATA: CredentialItem[] = [
     buttonLabel: 'View Certificate'
   },
   {
+    id: 'udemy-owasp-security-testing',
+    organization: 'Udemy',
+    type: 'Verified Credential',
+    category: 'CERTIFICATION',
+    title: 'OWASP Security Testing of Web, API, Android & Source Code Apps',
+    verificationUrl: 'https://www.udemy.com/certificate/UC-82b1d09e-bb33-419d-a461-c71736e0799a/',
+    buttonLabel: 'View Certificate'
+  },
+  {
     id: 'deloitte-cyber-simulation',
     organization: 'Deloitte (Forage)',
     type: 'Verified Credential',
