@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, ShieldCheck, Check, Code, Lock, Cpu, FileText, CheckCircle2, AlertCircle } from 'lucide-react';
+import { X, ExternalLink, ShieldCheck, Check, Code, Lock, Cpu, FileText, CheckCircle2, AlertCircle, Bot, Layers, Server, ShieldAlert } from 'lucide-react';
 import type { ProjectItem } from '../types';
 import { GithubIcon } from './SocialIcons';
 
@@ -91,7 +91,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
         )}
 
-        {/* Extended Capabilities Section (for Crypta) */}
+        {/* Extended Capabilities Section */}
         {project.capabilities && (
           <div className="mb-6 space-y-4">
             <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
@@ -131,6 +131,202 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   </ul>
                 </div>
               )}
+
+              {project.capabilities.apiSecurityTesting && (
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+                  <span className="text-xs font-mono font-bold text-cyan-300 uppercase block mb-2.5">
+                    API SECURITY TESTING & RECONNAISSANCE
+                  </span>
+                  <ul className="space-y-2">
+                    {project.capabilities.apiSecurityTesting.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.capabilities.securityMonitoring && (
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+                  <span className="text-xs font-mono font-bold text-cyan-300 uppercase block mb-2.5">
+                    REAL-TIME TRAFFIC & ANOMALY MONITORING
+                  </span>
+                  <ul className="space-y-2">
+                    {project.capabilities.securityMonitoring.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.capabilities.detectionAndRisk && (
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+                  <span className="text-xs font-mono font-bold text-cyan-300 uppercase block mb-2.5">
+                    RISK SCORING & OWASP FINDINGS
+                  </span>
+                  <ul className="space-y-2">
+                    {project.capabilities.detectionAndRisk.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.capabilities.securityOperations && (
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+                  <span className="text-xs font-mono font-bold text-cyan-300 uppercase block mb-2.5">
+                    SOC OPERATIONS & COMPLIANCE
+                  </span>
+                  <ul className="space-y-2">
+                    {project.capabilities.securityOperations.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* AI Security Analyst Section */}
+        {project.aiSecurityAnalyst && (
+          <div className="mb-6 p-4 rounded-xl bg-cyan-950/20 border border-cyan-500/30">
+            <h4 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+              <Bot className="w-4 h-4 text-cyan-400" />
+              <span>AI Security Analyst Pipeline</span>
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              {project.aiSecurityAnalyst.description}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mb-3">
+              {project.aiSecurityAnalyst.pipeline.map((step, idx) => (
+                <div key={idx} className="p-2.5 rounded-lg bg-black/40 border border-cyan-500/20 flex flex-col justify-between">
+                  <span className="text-[10px] font-mono text-cyan-400 font-bold mb-1">STAGE 0{idx + 1}</span>
+                  <span className="text-xs text-slate-200 leading-tight">{step}</span>
+                </div>
+              ))}
+            </div>
+            <div className="p-2.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-[11px] text-cyan-300 font-mono flex items-start gap-2">
+              <AlertCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+              <span>{project.aiSecurityAnalyst.note}</span>
+            </div>
+          </div>
+        )}
+
+        {/* Architecture Layers */}
+        {project.architectureLayers && (
+          <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+            <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <Layers className="w-4 h-4 text-cyan-400" />
+              <span>System Architecture & Component Layers</span>
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono">
+              {project.architectureLayers.frontend && (
+                <div className="p-3 rounded-lg bg-black/40 border border-white/[0.05]">
+                  <span className="text-cyan-400 font-bold block mb-1">FRONTEND LAYER</span>
+                  <span className="text-slate-300">{project.architectureLayers.frontend}</span>
+                </div>
+              )}
+              {project.architectureLayers.backend && (
+                <div className="p-3 rounded-lg bg-black/40 border border-white/[0.05]">
+                  <span className="text-cyan-400 font-bold block mb-1">BACKEND API LAYER</span>
+                  <span className="text-slate-300">{project.architectureLayers.backend}</span>
+                </div>
+              )}
+              {project.architectureLayers.database && (
+                <div className="p-3 rounded-lg bg-black/40 border border-white/[0.05]">
+                  <span className="text-cyan-400 font-bold block mb-1">DATABASE & PERSISTENCE</span>
+                  <span className="text-slate-300">{project.architectureLayers.database}</span>
+                </div>
+              )}
+              {project.architectureLayers.engines && (
+                <div className="p-3 rounded-lg bg-black/40 border border-white/[0.05]">
+                  <span className="text-cyan-400 font-bold block mb-1">DETECTION & SCANNING ENGINES</span>
+                  <ul className="space-y-1 text-slate-300">
+                    {project.architectureLayers.engines.map((e, i) => (
+                      <li key={i} className="flex items-center gap-1.5">
+                        <span className="text-cyan-400">•</span>
+                        <span>{e}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {project.architectureLayers.supportingServices && (
+                <div className="p-3 rounded-lg bg-black/40 border border-white/[0.05] md:col-span-2">
+                  <span className="text-cyan-400 font-bold block mb-1">SUPPORTING SERVICES</span>
+                  <div className="flex flex-wrap gap-2 text-slate-300">
+                    {project.architectureLayers.supportingServices.map((s, i) => (
+                      <span key={i} className="px-2.5 py-1 rounded bg-white/[0.05] border border-white/[0.08]">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Deployment & CI/CD Info */}
+        {project.deploymentInfo && (
+          <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+            <h4 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <Server className="w-4 h-4 text-emerald-400" />
+              <span>Containerized Deployment & CI/CD</span>
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono">
+              {project.deploymentInfo.containerization && (
+                <div className="p-2.5 rounded-lg bg-black/40 border border-white/[0.05]">
+                  <span className="text-slate-400 block text-[10px] uppercase mb-0.5">Containerization</span>
+                  <span className="text-emerald-400 font-bold">{project.deploymentInfo.containerization}</span>
+                </div>
+              )}
+              {project.deploymentInfo.ciCd && (
+                <div className="p-2.5 rounded-lg bg-black/40 border border-white/[0.05]">
+                  <span className="text-slate-400 block text-[10px] uppercase mb-0.5">CI/CD Automation</span>
+                  <span className="text-emerald-400 font-bold">{project.deploymentInfo.ciCd}</span>
+                </div>
+              )}
+            </div>
+            {project.deploymentInfo.note && (
+              <p className="mt-2.5 text-xs font-mono text-emerald-300/90 flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>{project.deploymentInfo.note}</span>
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Security & Operational Boundaries */}
+        {project.securityBoundaries && (
+          <div className="mb-6 p-4 rounded-xl bg-amber-500/[0.03] border border-amber-500/20">
+            <h4 className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4 text-amber-400" />
+              <span>Security Scope & Authorized Use Boundaries</span>
+            </h4>
+            <p className="text-xs text-slate-300 mb-3 leading-relaxed">
+              <strong className="text-amber-300">Authorized Use:</strong> {project.securityBoundaries.authorizedUse}
+            </p>
+            <div className="space-y-1 text-xs font-mono text-slate-400">
+              <span className="text-[10px] uppercase font-bold text-amber-400/80 block mb-1">Excluded / Prohibited Actions:</span>
+              {project.securityBoundaries.excludedActions.map((action, idx) => (
+                <div key={idx} className="flex items-start gap-2">
+                  <span className="text-amber-400 shrink-0">✕</span>
+                  <span>{action}</span>
+                </div>
+              ))}
             </div>
           </div>
         )}

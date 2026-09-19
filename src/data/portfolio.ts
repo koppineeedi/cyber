@@ -261,6 +261,119 @@ export const PROJECTS_DATA: UpgradedProjectItem[] = [
     ]
   },
   {
+    id: 'api-sentinel',
+    title: 'API Sentinel — API Security Testing & Monitoring Platform',
+    category: 'API Security Testing & Monitoring',
+    categoryFilter: 'Cybersecurity',
+    maturity: 'Production-Oriented Security Platform',
+    isFeatured: true,
+    tagline: 'Discover. Detect. Defend. — Intelligent API Security.',
+    description: 'API security testing and monitoring platform with vulnerability detection, traffic analytics, anomaly detection, risk scoring, findings management, security reports, audit logging, and AI-assisted analysis.',
+    fullDescription: 'API Sentinel is a production-oriented API Security Testing & Monitoring Platform designed to discover, assess, and monitor API security risks. It combines OpenAPI discovery, authentication and authorization testing, JWT analysis, BOLA/IDOR detection, security-header and input-validation checks, traffic monitoring, anomaly detection, explainable risk scoring, findings management, security reports, audit logging, and AI-assisted security analysis in a SOC-style dashboard.',
+    githubUrl: 'https://github.com/koppineeedi/api-sentinel',
+    tags: ['React', 'FastAPI', 'Python', 'PostgreSQL', 'SQLAlchemy', 'Docker', 'GitHub Actions'],
+    securityRelevance: 'OpenAPI spec auto-discovery • Auth & JWT vulnerability scanner • BOLA / IDOR detection • Traffic monitoring & anomaly detection • Explainable risk scoring engine • AI-assisted SOC remediation guidance',
+    keyFeatures: [
+      'OpenAPI / Swagger spec auto-discovery, parsing & endpoint cataloging',
+      'Vulnerability scanning engine for Auth bypass, weak JWTs, BOLA/IDOR, and Injection (SQLi/XSS/SSRF)',
+      'Security header enforcement verification (CORS, CSP, HSTS, X-Content-Type)',
+      'Real-time API traffic capture, request/response payload inspection & baseline anomaly detection',
+      'Explainable weighted risk calculation algorithm (0-100 score) mapped to OWASP API Security Top 10',
+      'AI Security Analyst overlay for context-aware vulnerability explanation & actionable SOC fixes',
+      'HTML/JSON security report generator, full operational audit logging, and Role-Based Access Control (RBAC)'
+    ],
+    capabilities: {
+      apiSecurityTesting: [
+        'OpenAPI / Swagger spec auto-discovery & parsing',
+        'Authentication bypass & weak token validation',
+        'JWT security analysis (weak algorithms, missing signatures, claim tampering)',
+        'Broken Object Level Authorization (BOLA / IDOR) detection',
+        'Input validation & injection vulnerability checks (SQLi, XSS, SSRF)',
+        'Rate limit testing & anti-automation verification',
+        'Security header compliance checking (CORS, CSP, HSTS, X-Content-Type)'
+      ],
+      securityMonitoring: [
+        'Real-time API traffic capture & request/response inspection',
+        'Endpoint inventory & API endpoint parameter profiling',
+        'High-volume anomaly & suspicious payload detection'
+      ],
+      detectionAndRisk: [
+        'Weighted risk scoring engine (0-100 score per endpoint)',
+        'Deterministic vulnerability classification (OWASP API Security Top 10)',
+        'Consolidated findings management & remediation tracking'
+      ],
+      securityOperations: [
+        'HTML & JSON security report generation',
+        'Comprehensive audit logging for all security operations',
+        'Role-Based Access Control (RBAC: Admin, Analyst, Auditor)'
+      ]
+    },
+    aiSecurityAnalyst: {
+      description: 'AI-assisted security analysis engine that interprets observed vulnerability evidence, correlates traffic anomalies, and generates actionable SOC remediation guidance.',
+      pipeline: [
+        'Observed Security Evidence (HTTP logs, header gaps, failed auth)',
+        'Deterministic Vulnerability & Anomaly Detection Result',
+        'AI Analysis & Risk Interpretation (Contextual threat evaluation)',
+        'Actionable SOC Remediation Guidance & Fix Recommendations'
+      ],
+      note: 'AI acts as an analytical overlay to simplify investigation workflows; zero automated exploitation or payload execution occurs without deterministic verification.'
+    },
+    architectureLayers: {
+      frontend: 'React + TypeScript + Vite + Tailwind CSS (SOC-Style Operations Dashboard)',
+      backend: 'FastAPI (Python) + Pydantic',
+      engines: [
+        'OpenAPI Spec Parser & Discovery Engine',
+        'Vulnerability Scanner Engine (Auth, JWT, BOLA, Injection, Headers)',
+        'Traffic Analytics & Anomaly Detection Engine',
+        'Explainable Risk Scoring Engine'
+      ],
+      database: 'PostgreSQL + SQLAlchemy ORM',
+      supportingServices: [
+        'AI Security Analyst Integration (LLM-assisted threat insights)',
+        'Audit Logging Engine',
+        'Report Generator (HTML/JSON export)'
+      ]
+    },
+    deploymentInfo: {
+      containerization: 'Docker & Docker Compose (Multi-container orchestration for Web, API, Database)',
+      services: ['FastAPI Backend Service', 'React Frontend Service', 'PostgreSQL Database Service'],
+      ciCd: 'GitHub Actions CI/CD Pipeline (Automated testing & linting)',
+      note: '35/35 automated backend unit & integration tests passing in CI pipeline.'
+    },
+    securityBoundaries: {
+      authorizedUse: 'Authorized API security testing, internal environment monitoring, and defensive vulnerability management.',
+      excludedActions: [
+        'No unauthorized scanning or brute-forcing of third-party APIs',
+        'No credential stuffing or password spraying',
+        'No Denial of Service (DoS/DDoS) attack testing',
+        'No payload execution against production systems without explicit authorization'
+      ]
+    },
+    securityEngineering: [
+      'FastAPI & Pydantic for high-performance async API security scanning',
+      'SQLAlchemy ORM + PostgreSQL for relational findings & audit persistence',
+      'JWT decoding & cryptographic signature inspection without secret leakage',
+      'OpenAPI 3.0 specification parser & parameter schema validator',
+      'Explainable weighted risk calculation algorithm based on OWASP API Top 10 impact',
+      'Dockerized multi-container setup with isolated network bridges',
+      'CI/CD workflow enforcing 35/35 unit and integration test pass requirements'
+    ],
+    testMetrics: '35/35 tests passing',
+    documentationLinks: [
+      { title: 'README.md', url: 'https://github.com/koppineeedi/api-sentinel#readme' },
+      { title: 'SECURITY.md', url: 'https://github.com/koppineeedi/api-sentinel/blob/main/SECURITY.md' },
+      { title: 'ARCHITECTURE.md', url: 'https://github.com/koppineeedi/api-sentinel/blob/main/ARCHITECTURE.md' }
+    ],
+    screenshots: [
+      { label: 'API Sentinel Dashboard', placeholderText: 'Overview dashboard with risk scores & endpoint status' },
+      { label: 'API Inventory & Discovery', placeholderText: 'OpenAPI parser & discovered endpoint catalog' },
+      { label: 'Vulnerability Scanner', placeholderText: 'JWT, BOLA & Injection security test execution' },
+      { label: 'Traffic & Anomaly Monitor', placeholderText: 'Real-time API traffic capture & baseline anomaly alerts' },
+      { label: 'AI Security Analyst', placeholderText: 'AI-assisted vulnerability interpretation & remediation guidance' },
+      { label: 'Findings & Audit Logs', placeholderText: 'OWASP findings list, audit trail & HTML report export' }
+    ]
+  },
+  {
     id: 'exploit2detect',
     title: 'Exploit2Detect',
     category: 'Cybersecurity / SOC',

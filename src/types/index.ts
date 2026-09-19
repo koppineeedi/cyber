@@ -32,6 +32,33 @@ export interface ProjectItem {
   capabilities?: {
     fileSecurity?: string[];
     passwordSecurity?: string[];
+    apiSecurityTesting?: string[];
+    securityMonitoring?: string[];
+    detectionAndRisk?: string[];
+    securityOperations?: string[];
+  };
+  aiSecurityAnalyst?: {
+    description: string;
+    pipeline: string[];
+    note: string;
+  };
+  architectureLayers?: {
+    frontend?: string;
+    backend?: string;
+    testingAndAnalysis?: string[];
+    engines?: string[];
+    database?: string;
+    supportingServices?: string[];
+  };
+  deploymentInfo?: {
+    containerization?: string;
+    services?: string[];
+    ciCd?: string;
+    note?: string;
+  };
+  securityBoundaries?: {
+    authorizedUse: string;
+    excludedActions: string[];
   };
   privacyArchitecture?: {
     passwordAnalysis?: string;
