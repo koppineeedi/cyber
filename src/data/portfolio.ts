@@ -296,19 +296,80 @@ export const PROJECTS_DATA: UpgradedProjectItem[] = [
   },
   {
     id: 'crypta',
-    title: 'Crypta',
+    title: 'Crypta — Client-Side Encryption & Password Security Toolkit',
     category: 'Cybersecurity / Cryptography',
     categoryFilter: 'Cybersecurity',
-    maturity: 'Security Project',
+    maturity: 'Client-Side Cryptography & Password Security',
     isFeatured: true,
-    description: 'Secure browser-based file encryption tool using AES-GCM and PBKDF2.',
+    tagline: 'Protect your files. Strengthen your passwords. Keep your secrets private.',
+    description: 'Privacy-first browser security toolkit combining AES-256-GCM file encryption with advanced password analysis, breach exposure detection, reuse detection, attack-resistance estimation, and secure password generation.',
+    fullDescription: 'Crypta is a privacy-first cybersecurity toolkit that provides browser-based AES-256-GCM file encryption and advanced password security analysis, including password strength and pattern detection, guessability estimation, attack-resistance modeling, breach exposure checking, password reuse detection, and cryptographically secure password generation.',
     githubUrl: 'https://github.com/koppineeedi/crypta',
-    tags: ['AES-GCM', 'PBKDF2', 'Encryption', 'Web Security'],
-    securityRelevance: 'File encryption • AES-GCM • PBKDF2',
+    tags: ['JavaScript', 'Web Crypto API', 'AES-256-GCM', 'PBKDF2', 'SHA-256'],
+    securityRelevance: 'AES-256-GCM browser encryption • PBKDF2 key derivation • Privacy-preserving k-anonymity breach checking • Password attack-resistance modeling',
     keyFeatures: [
-      'Authenticated AES-256-GCM encryption mode',
-      'PBKDF2 key derivation with 100k+ iterations',
-      'Zero-server data exposure design'
+      'Client-side AES-256-GCM file encryption with random salt, random IV & PBKDF2 key derivation',
+      'Advanced password analyzer with pattern detection (dictionary, keyboard, sequential, date/year)',
+      'Privacy-preserving breach exposure checking using k-anonymity (plaintext password never sent)',
+      'Password attack-resistance modeling (online throttled, offline fast-hash & slow-KDF estimates)',
+      'Local/session-based password reuse detection across accounts without server storage',
+      'Cryptographically secure password & Diceware passphrase generator via crypto.getRandomValues()'
+    ],
+    capabilities: {
+      fileSecurity: [
+        'AES-256-GCM file encryption',
+        'Secure password-based key derivation (PBKDF2)',
+        'Random salt generation',
+        'Random IV generation',
+        'Browser-side encryption/decryption',
+        'No plaintext file uploads'
+      ],
+      passwordSecurity: [
+        'Advanced password analysis & pattern detection',
+        'Guessability estimation & attack-resistance modeling',
+        'Breach exposure detection via k-anonymity',
+        'Password reuse detection (session-based)',
+        'Secure password generation (crypto.getRandomValues())',
+        'Passphrase generation (Diceware-based)'
+      ]
+    },
+    privacyArchitecture: {
+      passwordAnalysis: 'Client-side local processing',
+      fileEncryption: 'Client-side local processing in browser',
+      plaintextStorage: 'None (zero server-side storage)',
+      plaintextUpload: 'None (no plaintext file uploads)',
+      breachLookup: 'Privacy-preserving (k-anonymity hash prefix only)'
+    },
+    attackResistance: {
+      title: 'Model-Based Attack Resistance Estimates',
+      models: [
+        'Online throttled attack model (e.g., 10 guesses/min rate-limited login endpoints)',
+        'Offline fast-hash attack model (e.g., MD5/SHA-1 GPU hash cracking arrays)',
+        'Offline slow password-KDF attack model (e.g., PBKDF2 / Argon2 / bcrypt slow key derivation)'
+      ],
+      disclaimer: 'Results are model-based resistance estimates depending on assumptions about attacker hardware, hashing algorithms, dictionaries, leaked credentials, rate limits, and attack strategies.'
+    },
+    securityEngineering: [
+      'Web Crypto API for native browser cryptographic primitives',
+      'AES-256-GCM authenticated symmetric encryption mode',
+      'PBKDF2 key derivation with random salt for password-to-key transformation',
+      'SHA-256 hashing for k-anonymity prefix-based breach checking',
+      'crypto.getRandomValues() for cryptographically secure pseudo-random number generation',
+      'Zero-knowledge client-side secret handling'
+    ],
+    testMetrics: '14 automated tests passing',
+    documentationLinks: [
+      { title: 'README.md', url: 'https://github.com/koppineeedi/crypta#readme' },
+      { title: 'SECURITY.md', url: 'https://github.com/koppineeedi/crypta/blob/main/SECURITY.md' },
+      { title: 'THREAT_MODEL.md', url: 'https://github.com/koppineeedi/crypta/blob/main/THREAT_MODEL.md' }
+    ],
+    screenshots: [
+      { label: 'Crypta Dashboard', placeholderText: 'Main security dashboard & navigation' },
+      { label: 'File Encryption', placeholderText: 'AES-256-GCM file encryption & decryption interface' },
+      { label: 'Password Security Analyzer', placeholderText: 'Pattern detection & strength analysis' },
+      { label: 'Password Generator', placeholderText: 'Cryptographic password & Diceware passphrase generator' },
+      { label: 'Password Reuse Detection', placeholderText: 'Session-based account password reuse checker' },
+      { label: 'Privacy & Security Center', placeholderText: 'Client-side security architecture & limitations disclosure' }
     ]
   },
   {

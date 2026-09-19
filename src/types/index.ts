@@ -27,6 +27,28 @@ export interface ProjectItem {
   securityRelevance?: string;
   keyFeatures?: string[];
   liveUrl?: string;
+  tagline?: string;
+  fullDescription?: string;
+  capabilities?: {
+    fileSecurity?: string[];
+    passwordSecurity?: string[];
+  };
+  privacyArchitecture?: {
+    passwordAnalysis?: string;
+    fileEncryption?: string;
+    plaintextStorage?: string;
+    plaintextUpload?: string;
+    breachLookup?: string;
+  };
+  attackResistance?: {
+    title: string;
+    models: string[];
+    disclaimer: string;
+  };
+  securityEngineering?: string[];
+  testMetrics?: string;
+  documentationLinks?: { title: string; url: string }[];
+  screenshots?: { label: string; placeholderText: string }[];
 }
 
 export interface SecurityPracticeItem {
